@@ -22,6 +22,7 @@ class CreateUserService {
   ) {}
 
   async execute({ name, email, password }: IRequest): Promise<User> {
+    console.log(email);
     const checkUserExists = await this.usersRepository.findByEmail(email);
 
     if (checkUserExists) {
