@@ -2,7 +2,7 @@ import AppError from '@shared/errors/AppError';
 import FakeUsersRepository from '../repositories/fakes/FakeUsersRepository';
 import ShowProfileService from './ShowProfileService';
 
-describe('UpdateUserAvatar', () => {
+describe('ShowProfile', () => {
   let fakeUsersRepository: FakeUsersRepository;
   let showProfile: ShowProfileService;
 
