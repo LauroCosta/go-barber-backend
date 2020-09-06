@@ -1,13 +1,13 @@
 import { getRepository, Repository, Raw } from 'typeorm';
 
-import IAppointmensRepository from '@modules/appointments/repositories/IAppointmentsRepository';
+import IAppointmentsRepository from '@modules/appointments/repositories/IAppointmentsRepository';
 import ICreateAppointmentDTO from '@modules/appointments/dtos/ICreateAppointmentDTO';
 
 import IFindAllInMonthFromProviderDTO from '@modules/appointments/dtos/IFindAllInMonthFromProviderDTO';
 import IFindAllInDayFromProviderDTO from '@modules/appointments/dtos/IFindAllInDayFromProviderDTO';
 import Appointment from '../entities/Appointment';
 
-class AppointmentsRepository implements IAppointmensRepository {
+class AppointmentsRepository implements IAppointmentsRepository {
   private ormRepository: Repository<Appointment>;
 
   constructor() {
@@ -50,7 +50,6 @@ class AppointmentsRepository implements IAppointmensRepository {
     const parsedMonth = String(month).padStart(2, '0');
     const parsedDay = String(day).padStart(2, '0');
 
-    console.log(provider_id, parsedDay, parsedMonth, year);
     const appointments = await this.ormRepository.find({
       where: {
         provider_id,
@@ -61,7 +60,6 @@ class AppointmentsRepository implements IAppointmensRepository {
       },
     });
 
-    console.log(appointments);
     return appointments;
   }
 
