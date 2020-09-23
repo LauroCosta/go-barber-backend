@@ -5,7 +5,7 @@
   "license": "MIT",
   "scripts": {
     "build": "tsc",
-    "dev:server": "ts-node-dev  --transpileOnly --inspect --ignore-watch node_modules -r tsconfig-paths/register src/shared/infra/http/server.ts",
+    "dev:server": "ts-node-dev  --transpile-only --inspect --ignore-watch node_modules -r tsconfig-paths/register src/shared/infra/http/server.ts",
     "start": "ts-done -r tsconfig-paths/register src/shared/infra/http/server.ts",
     "typeorm": "ts-node-dev -r tsconfig-paths/register ./node_modules/typeorm/cli.js",
     "test": "jest"
@@ -47,7 +47,7 @@
     "eslint-plugin-import": "^2.21.2",
     "eslint-plugin-prettier": "^3.1.4",
     "jest": "^26.4.0",
-    "prettier": "^2.0.5",
+    "prettier": "^2.1.1",
     "ts-jest": "^26.2.0",
     "ts-node-dev": "^1.0.0-pre.50",
     "tsconfig-paths": "^3.9.0",
